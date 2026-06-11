@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FishPass 数据监测大屏</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 ECharts 用于图表展示 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐟 FishPass 鱼道监测数据中心</h1>
+            <div class="header-right">
+                <span id="current-time"></span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- 左侧统计面板 -->
+            <div class="sidebar">
+                <div class="card">
+                    <h2>实时总览</h2>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-title">总过鱼量</div>
+                            <div class="stat-value" id="total-fish">1,204</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-title">平均通过率</div>
+                            <div class="stat-value" id="avg-pass-rate">85.6%</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-title">上溯数量</div>
+                            <div class="stat-value text-up" id="up-count">892</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-title">降河数量</div>
+                            <div class="stat-value text-down" id="down-count">312</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>各池室通过率对比</h2>
+                    <div id="pool-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- 右侧数据表格面板 -->
+            <div class="content-area">
+                <div class="card full-height">
+                    <div class="card-header">
+                        <h2>详细流水记录</h2>
+                        <div class="controls">
+                            <select id="pool-filter">
+                                <option value="all">所有池室</option>
+                                <option value="1">池室 1</option>
+                                <option value="2">池室 2</option>
+                            </select>
+                            <input type="date" id="date-filter">
+                            <button id="refresh-btn">刷新数据</button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="data-table">
+                            <thead>
+                                <tr>
+                                    <th>记录ID</th>
+                                    <th>池室名称</th>
+                                    <th>位置类型</th>
+                                    <th>流动方向</th>
+                                    <th>记录时间</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- 数据行将由 JS 动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <button id="prev-page" disabled>上一页</button>
+                        <span id="page-info">第 1 页 / 共 1 页</span>
+                        <button id="next-page" disabled>下一页</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+# IDE and editor state
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# Visual Studio build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Xx]64/
+[Xx]86/
+FishPass/[Dd]ebug/
+FishPass/[Rr]elease/
+FishPass/[Xx]64/
+FishPass/[Xx]86/
+*.exe
+*.dll
+*.lib
+*.exp
+*.obj
+*.iobj
+*.ipdb
+*.ilk
+*.idb
+*.pch
+*.pdb
+*.tlog
+*.lastbuildstate
+*.recipe
+*.log
+
+# Third-party SDKs and local runtime packages
+3rdparty/
+
+# Model files are large; publish them through releases, object storage, or Git LFS
+model/
+*.engine
+*.onnx
+*.pt
+*.pth
+*.weights
+
+# Runtime generated media and captures
+FishPass/crops/
+FishPass/output_record.mp4
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+
+# Python dashboard local files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Local database and dump files
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+
+# OS files
+Thumbs.db
+Desktop.ini
